@@ -1,8 +1,22 @@
 <?php 
-    /*
-        le code PHP de la page
-        déclaration de variables, conditions, etc etc
-    */
+    
+    $heroName = $_GET["heroName"];
+
+    if ($_SERVER["REQUEST_METHOD"] === "GET") {
+
+        if(isset($_GET["choice"])) {
+            $choice = $_GET["choice"];
+
+            if ($choice === "choice-1") {
+                header("Location: page-5.phtml"); // Redirige vers la page 5
+                exit();
+            } elseif ($choice === "choice-2") {
+                header("Location: page-6.phtml"); // Redirige vers la page 6
+                exit();
+            }
+        }
+    }
+?>
 ?>
 <!DOCTYPE html>
 <html>

@@ -1,8 +1,9 @@
 <?php 
-    /*
-        le code PHP de la page
-        déclaration de variables, conditions, etc etc
-    */
+if (isset($_GET["heroName"])) {
+    $heroName = $_GET["heroName"];
+} else {
+    $heroName = "Héro";
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,26 +17,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body id="choice-red">
+<body id="choice-dark-blue">
 <main>
     <section>
-        <h2>Description du choix à faire</h2>
+        <h2>FIN</h2>
         <div>
-            <form method="get" action="">
-                <div>
-                    <input type="radio" id="choice-1" name="choice" value="choice-1">
-                    <label for="choice-1">Explorez le monde avec votre nouvel artefact. Félicitations, vous avez atteint l'une des Fins Puissantes</label>
-                </div>
-                <div>
-                    <input type="submit" value="Valider le choix" />
-                </div>
-            </form>
+             <h2>Explorez le monde avec votre nouvel artefact.<br>
+             Félicitations <?php echo $heroName ?>, vous avez atteint l'une des Fins Puissantes</h2>
         </div>
     </section>
     <section>
         <section>
-            <img src="assets/img/treasure.png" />
-            <h1>Vous accomplissez la mission des esprits avec succès. En retour, ils vous remettent un artefact puissant qui vous confère des pouvoirs extraordinaires</h1>
+            <img src="assets/img/fire-spell.png" />
+            <h1>Vous avez accompli la mission des esprits avec succès.<br>En retour, ils vous remettent un artefact puissant qui vous confère des pouvoirs extraordinaires</h1>
         </section>
     </section>
 </main>

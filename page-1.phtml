@@ -1,9 +1,26 @@
 <?php 
-    /*
-        le code PHP de la page
-        déclaration de variables, conditions, etc etc
-    */
+
+    $heroName = $_GET["heroName"];
+
+    if ($_SERVER["REQUEST_METHOD"] === "GET") {
+
+        if(isset($_GET["choice"])) {
+            $choice = $_GET["choice"];
+
+            if ($choice === "choice-1") {
+                header("Location: page-2.phtml"); // Redirige vers la page 2
+                exit();
+            } elseif ($choice === "choice-2") {
+                header("Location: page-3.phtml"); // Redirige vers la page 3
+                exit();
+            } elseif ($choice === "choice-3") {
+                header("Location: page-4.phtml"); // Redirige vers la page 4
+                exit();
+            }
+        }
+    }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +38,7 @@
     <section>
         <h2>Description du choix à faire</h2>
         <div>
-            <form method="get" action="">
+            <form method="GET" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                 <div>
                     <input type="radio" id="choice-1" name="choice" value="choice-1">
                     <label for="choice-1">Pour emprunter le sentier escarpé menant à la Tour des Mystères</label>

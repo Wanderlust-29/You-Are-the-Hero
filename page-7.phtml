@@ -1,8 +1,18 @@
-<?php 
-    /*
-        le code PHP de la page
-        déclaration de variables, conditions, etc etc
-    */
+<?php
+
+    $heroName = $_GET["heroName"];
+    
+    if ($_SERVER["REQUEST_METHOD"] === "GET") {
+
+        if(isset($_GET["choice"])) {
+            $choice = $_GET["choice"];
+
+            if ($choice === "choice-1") {
+                header("Location: page-12.phtml"); // Redirige vers la page 12
+                exit();
+            }
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +44,7 @@
     </section>
     <section>
         <section>
-            <img src="assets/img/treasure.png" />
+            <img src="assets/img/tower.png" />
             <h1>Vous aidez l'elfe à protéger l'Arbre du Monde, libérant une énergie magique qui revitalise tout le Royaume des Elfes. L'elfe vous remercie chaleureusement.</h1>
         </section>
     </section>

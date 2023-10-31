@@ -1,8 +1,18 @@
 <?php 
-    /*
-        le code PHP de la page
-        déclaration de variables, conditions, etc etc
-    */
+    
+    $heroName = $_GET["heroName"];
+    
+    if ($_SERVER["REQUEST_METHOD"] === "GET") {
+
+        if(isset($_GET["choice"])) {
+            $choice = $_GET["choice"];
+
+            if ($choice === "choice-1") {
+                header("Location: page-1.phtml"); // Redirige vers la page 1
+                exit();
+            }
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body id="choice-red">
+<body id="choice-grey-blue">
 <main>
     <section>
         <h2>Description du choix à faire</h2>
@@ -34,7 +44,7 @@
     </section>
     <section>
         <section>
-            <img src="assets/img/treasure.png" />
+            <img src="assets/img/door.png" />
             <h1>Vous choisissez d'ignorer l'elfe et continuez votre chemin. Vous quittez le Royaume des Elfes et retournez au croisement</h1>
         </section>
     </section>

@@ -1,8 +1,18 @@
 <?php 
-    /*
-        le code PHP de la page
-        déclaration de variables, conditions, etc etc
-    */
+    
+    $heroName = $_GET["heroName"];
+    
+    if ($_SERVER["REQUEST_METHOD"] === "GET") {
+
+        if(isset($_GET["choice"])) {
+            $choice = $_GET["choice"];
+
+            if ($choice === "choice-1") {
+                header("Location: page-11.phtml"); // Redirige vers la page 11
+                exit();
+            }
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body id="choice-red">
+<body id="choice-grey-blue">
 <main>
     <section>
         <h2>Description du choix à faire</h2>
@@ -34,7 +44,7 @@
     </section>
     <section>
         <section>
-            <img src="assets/img/treasure.png" />
+            <img src="assets/img/staff.png" />
             <h1>Vous devenez l'apprenti du vieux mage. Il vous enseigne des sorts puissants et vous partage des connaissances secrètes</h1>
         </section>
     </section>

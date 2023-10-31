@@ -1,8 +1,18 @@
-<?php 
-    /*
-        le code PHP de la page
-        déclaration de variables, conditions, etc etc
-    */
+<?php
+
+    $heroName = $_GET["heroName"];
+    
+    if ($_SERVER["REQUEST_METHOD"] === "GET") {
+
+        if(isset($_GET["choice"])) {
+            $choice = $_GET["choice"];
+
+            if ($choice === "choice-1") {
+                header("Location: page-1.phtml"); // Redirige vers la page 1
+                exit();
+            }
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body id="choice-red">
+<body id="choice-grey-blue">
 <main>
     <section>
         <h2>Description du choix à faire</h2>
@@ -24,7 +34,7 @@
             <form method="get" action="">
                 <div>
                     <input type="radio" id="choice-1" name="choice" value="choice-1">
-                    <label for="choice-1">Utilisez vos nouvelles compétences pour aider le monde</label>
+                    <label for="choice-1">Choisissez une nouvelle direction</label>
                 </div>
                 <div>
                     <input type="submit" value="Valider le choix" />
@@ -34,7 +44,7 @@
     </section>
     <section>
         <section>
-            <img src="assets/img/treasure.png" />
+            <img src="assets/img/door.png" />
             <h1>Vous décidez de ne pas devenir l'apprenti du vieux mage et redescendez la tour. Vous vous retrouvez de nouveau au croisement</h1>
         </section>
     </section>
