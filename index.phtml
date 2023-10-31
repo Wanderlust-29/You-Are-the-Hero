@@ -1,5 +1,12 @@
+?>
+<?php 
+    /*
+        le code PHP de la page
+        déclaration de variables, conditions, etc etc
+    */
+?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="utf-8" />
         <title>
@@ -15,12 +22,12 @@
             <section>
                 <h2>Quel est votre nom, héros ?</h2>
                 <div>
-                    <form method="get" action="index.phtml">
+                    <form method="get" action="choice.phtml">
                         <div>
                             <input type="text" name="heroName" id="heroName" />
                         </div>
                         <div>
-                            <input type="submit" value="Commencer votre aventure" />
+                            <input onclick="href='choice.phtml'" type="submit" value="Commencer votre aventure" />
                         </div>
                     </form>
                 </div>
