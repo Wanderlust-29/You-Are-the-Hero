@@ -1,9 +1,13 @@
 <?php 
-if (isset($_GET["heroName"])) {
-    $heroName = $_GET["heroName"];
-} else {
-    $heroName = "Héro";
-}
+
+    session_start();
+
+    if (isset($_SESSION["heroName"])) {
+        $heroName = $_SESSION["heroName"];
+    } else {
+        $heroName = "Héro";
+    }
+?>
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,7 +27,7 @@ if (isset($_GET["heroName"])) {
         <h2>FIN</h2>
         <div>
              <h2>Explorez le monde avec votre nouvel artefact.<br>
-             Félicitations <?php echo $heroName ?>, vous avez atteint l'une des Fins Puissantes</h2>
+             Félicitations <?php echo $heroName ?>,<br>vous avez atteint l'une des Fins Puissantes</h2>
         </div>
     </section>
     <section>

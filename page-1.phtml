@@ -1,6 +1,13 @@
-<?php 
+<?php
+    session_start();
+    
+    if (isset($_GET["heroName"])) {
+        $_SESSION["heroName"] = $_GET["heroName"];
+        $heroName = $_SESSION["heroName"];
+    } else {
+        $heroName = "Héro";
+    }
 
-    $heroName = $_GET["heroName"];
 
     if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
